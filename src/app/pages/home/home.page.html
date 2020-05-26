@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="outline: auto">
+      <ion-menu-button ></ion-menu-button >
+    </ion-buttons>
+    <ion-title>
+      <!-- መነሻ -->
+      <img src="/assets/hakim.jpg" alt="logo-header" style="width:100%;height:56px;float:left;" />
+    </ion-title>
+<!--     <ion-button slot="end" shape="round" fill="outline" ionBlur (click)="login()">ግባ</ion-button>
+ -->  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card">
+    <!--     <img src="/assets/blue.jpg" alt="" /> -->
+    <ion-card-header style="background: darkcyan;">
+      <ion-card-title text-center>እንኳን ወደ ሀኪም አፕ በደህና መጡ!</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <img  slot="end" src="/assets/logo.png" alt="logo" style="height: 385px;" />
+    <h2 text-center color="dark">አሁኑኑ ቀጠሮ ይያዙ</h2>
+  </ion-card>
+<!--   <ion-footer>
+    <h4 text-center>®2012 ሀኪም አፕ መብቱ በህግ የተጠበቀ ነው</h4>
+  </ion-footer>
+ --><!-- <ion-toolbar>
+    <ion-title text-center>2012 መብቱ በህግ የተጠበቀ ነው®</ion-title>
+  </ion-toolbar>
+ --></ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="get-care" (click)="getCare()">
+      <ion-icon name="heart" color="dark"></ion-icon>
+      <ion-label>መገለጫ</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="schedule" (click)="scheduleSelected()">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>ቀጠሮ ያዝ</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>ካርታ</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="appointments">
+      <ion-icon name="clock"></ion-icon>
+      <ion-label>ቀጠሮዎቼ</ion-label>
+<!-- 
+  
+ -->    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

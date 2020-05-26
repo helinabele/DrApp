@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="logout()">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>ግባ</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3>ወደ አካውንትህ ግባ!</h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-label>የተጠቃሚ ስም:</ion-label>
+              <ion-input name="username" placeholder="የተጠቃሚ ስም" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>የይለፍ ቃል:</ion-label>
+              <ion-input name="password" placeholder="የይለፍ ቃል" type="password" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+          <!-- <ion-button click="login()">Log in</ion-button> -->
+          <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">ግባ</ion-button>
+        </div>
+          <div text-center>
+          <h3>አካውንት ከሌለ?
+            <ion-chip>
+              <ion-label routerLink="/register" color="primary">እዚህ ጋር ይጫኑ</ion-label>
+            </ion-chip>
+          </h3>
+        </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

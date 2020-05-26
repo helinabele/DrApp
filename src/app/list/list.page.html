@@ -1,0 +1,211 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      ሆስፒታል/ዶክተር ዝርዝር
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title }}</b>
+  </div>
+
+</ion-content>
+
+ -->
+<!-- <ion-content>
+  <ion-virtual-scroll [items]="items" approxItemHeight="320px">
+    <ion-card *virtualItem="let item, let itemBounds = bounds;">
+      <div>
+        <ion-img [srs]="item.imgSrc" [height]="item.imgHeight" [alt]="item.name">
+        </ion-img>
+      </div>
+      <ion-card-header>
+        <ion-card-title>{{ item.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{ item.content }}</ion-card-content>
+    </ion-card>
+  </ion-virtual-scroll>
+</ion-content> -->
+
+<ion-content>
+  <div padding>
+    <ion-segment [(ngModel)]="appointment">
+      <ion-segment-button value="hospital">
+        ሆስፒታል
+      </ion-segment-button>
+      <ion-segment-button value="Dr">
+        ዶክተር
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="appointment">
+    <ion-list *ngSwitchCase="'hospital'">
+      <ion-card>
+        <ion-item
+          href="http://www.aau.edu.et/chs/tikur-anbessa-specialized-hospital/background-of-tikur-anbessa-hospital/">
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>ጥቁር አንበሳ ሆስፒታል</ion-label>
+          <ion-button size="small" fill="outline">ተጨማሪ</ion-button>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+        <ion-card-content>
+          ጥቁር አንበሳ ሆስፒታል በአዲስ አበባ, ኢትዮጲያ -
+          ስፔሻላይዝድ ሆስፒታል
+          ስልክ፡ +251 11 5511211
+          ፋክስ: +251 11 5505980 
+        </ion-card-content>
+<!--         <ion-button>ቀጠሮ ያዝ</ion-button>
+ -->        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label href="https://www.ethiovisit.com/directory/yekatit-12-hospital/2805/">የካቲት12 ሆስፒታል</ion-label>
+          <ion-button size="small"  fill="outline">ተጨማሪ</ion-button>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+
+        <ion-card-content>
+          ቤተዛታ ሆስፒታል በአዲስ አበባ, ኢትዮጲያ  -
+          አጠቃላይ የግል ሆስፒታል
+          ስልክ፡  +251 11 5514137
+         Fax: +251 11 5536524
+        </ion-card-content>
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>ነጋ ክሊኒክ</ion-label>
+          <ion-button size="small" fill="outline">ተጨማሪ</ion-button>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+
+        <ion-card-content>
+          የካቲት12 ሆስፒታል በአዲስ አበባ, ኢትዮጲያ -
+          አጠቃላይ ሆስፒታል
+          ስልክ፡ 011 155 3065/68
+        </ion-card-content>
+        <ion-item>
+          <ion-icon name="pin" slot="start"></ion-icon>
+          <ion-label>ቤተዛታ ሆስፒታል</ion-label>
+          <ion-button size="small" fill="outline">ተጨማሪ</ion-button>
+          <ion-icon name="arrow-forward"></ion-icon>
+        </ion-item>
+
+        <ion-card-content>
+          ነጋ ክሊኒክ በአዲስ አበባ, ኢትዮጲያ -
+          ነጋ ክሊኒክ አዲስ አበባ ከሚገኙ ከአንገት በላይ ሆስፒታሎች አንዱ ሲሆን
+          ስልክ፡  ...
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'Dr'">
+      <ion-card>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="/assets/1.png" alt="1" />
+          </ion-thumbnail>
+          <ion-label>ዶ/ር. ግዛው እረና<br />ካርዲዮሎጂስት<p>አጠቃላይ የልብ ሆስፒታል<br />ስልክ: 011 442 4680/81</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="/assets/1.png" alt="1" />
+          </ion-thumbnail>
+          <ion-label>ዶ/ር. ቱሉ ዱሬሳ<br />ዴንቲስት<p>ጥቁር አንበሳ ሆስፒታል<br />ስልክ: 091 124 0022</p>
+          </ion-label>
+
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="/assets/1.png" alt="1" />
+          </ion-thumbnail>
+          <ion-label>ዶ/ር. ጆን ፎጋርቲ<br />አጠቃላይ ህክምና<p>ሱኢስ ክለኒክ<br />ስልክ: 011 416 1649</p>
+          </ion-label>
+
+        </ion-item>
+
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="/assets/1.png" alt="1" />
+          </ion-thumbnail>
+          <ion-label>ዶ/ር. ሳባ ላምበረት<br />አጠቃላይ ባለሙያ<p>ሱኢስ ክለኒክ<br />ስልክ: 011 442 4680/81</p>
+          </ion-label>
+
+        </ion-item>
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="/assets/1.png" alt="1" />
+          </ion-thumbnail>
+          <ion-label>ዶ/ር. ሳሚይ ኢብራሂም<br /> የማህፀን ሐኪም<p>ካዲስኮ ሆስፒታል<br />ስልክ: 011 629 8904/02</p>
+          </ion-label>
+
+        </ion-item>
+      </ion-card>
+    </ion-list>
+
+  </div>
+</ion-content>
+<!-- <ion-content>
+<ion-card>
+  <ion-item href="http://www.aau.edu.et/chs/tikur-anbessa-specialized-hospital/background-of-tikur-anbessa-hospital/">
+    <ion-icon name="pin" slot="start"></ion-icon>
+    <ion-label>Black Lion Hostpital</ion-label>
+    <ion-button fill="outline" slot="end">More</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+    Black Lion Hospital in Addis Ababa, Ethiopia -
+    Black Lion Hospital Black Lion Hospital (Tikur Anbesa in Amharic)
+    is Ethiopia's largest general public hospital and ...
+  </ion-card-content>
+
+  <ion-item>
+    <ion-icon name="pin" slot="start"></ion-icon>
+    <ion-label href="https://www.ethiovisit.com/directory/yekatit-12-hospital/2805/">Yekatit 12 Hostpital</ion-label>
+    <ion-button fill="outline" slot="end">More</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+    Black Lion Hospital in Addis Ababa, Ethiopia -
+    Black Lion Hospital Black Lion Hospital (Tikur Anbesa in Amharic)
+    is Ethiopia's largest general public hospital and ...
+  </ion-card-content>
+
+  <ion-item>
+    <ion-icon name="pin" slot="start"></ion-icon>
+    <ion-label>Bethezata Hostpital</ion-label>
+    <ion-button fill="outline" slot="end">More</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+    Black Lion Hospital in Addis Ababa, Ethiopia -
+    Black Lion Hospital Black Lion Hospital (Tikur Anbesa in Amharic)
+    is Ethiopia's largest general public hospital and ...
+  </ion-card-content>
+
+  <ion-item>
+    <ion-icon name="pin" slot="start"></ion-icon>
+    <ion-label>Nega Clinic</ion-label>
+    <ion-button fill="outline" slot="end">More</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+    Black Lion Hospital in Addis Ababa, Ethiopia -
+    Black Lion Hospital Black Lion Hospital (Tikur Anbesa in Amharic)
+    is Ethiopia's largest general public hospital and ...
+  </ion-card-content>
+
+</ion-card>
+</ion-content> -->
